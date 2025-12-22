@@ -6,6 +6,7 @@ import "core:os"
 import "core:strconv"
 import "core:strings"
 
+@(private = "file")
 parse_input :: proc(f: os.Handle) -> [dynamic]int {
 	r: bufio.Reader
 	bufio.reader_init(&r, io.to_reader(os.stream_from_handle(f)))
