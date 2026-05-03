@@ -9,7 +9,7 @@ fn long part1(char[] input) {
     Tokenizer tokenizer = lib::tokenizer(input, '\n');
     while (try token = tokenizer.next()) {
         int sign = token[0] == 'R' ? 1 : -1;
-        int diff = sign * String.to_int((String) token[1..])!!;
+        int diff = sign * String.to_int(token[1..])!!;
         dial = (dial + diff + 100) % 100;
         if (dial == 0) {
             count++;
@@ -24,7 +24,7 @@ fn long part2(char[] input) {
     Tokenizer tokenizer = lib::tokenizer(input, '\n');
     while (try token = tokenizer.next()) {
         int sign = token[0] == 'R' ? 1 : -1;
-        int diff = String.to_int((String) token[1..])!!;
+        int diff = String.to_int(token[1..])!!;
         count += diff / 100;
         diff = sign * (diff % 100);
 
